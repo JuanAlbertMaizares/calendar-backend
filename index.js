@@ -1,15 +1,17 @@
 const express = require('express');
+require('dotenv').config();
+// process.env.NAME_VAR
+
 // crear app server express
 const app = express();
 
-app.get('/', (req, res)=>{
-    console.log('servidor funka');
-    res.json({
-        ok: true
-    })
-});
+app.use(express.static('public'));
+// note: Leer y obtener/parsear lo que venga en formato json.
+app.use(express.json());
+//note: RUTAS
+app.use('/api/auth', require('./routes/auth'));
 
 // escuchar solicitudes
-app.listen(4000, ()=>{
-    console.log(`servidor corriendo en puerto ${4000}`);
+app.listen(process.env.PORT, ()=>{
+    console.log(`servidor corriendo en puerto ${process.env.PORT}`);
 });
