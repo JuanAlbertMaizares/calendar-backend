@@ -76,11 +76,16 @@ const loginUsuario = async(req, res=express.response)=>{
     }
 }
 // mtd: Controller encargado del CREATE Token
-const revalidarToken = (req, res=express.response)=>{
-    console.log('servidor funka');
+const revalidarToken = async(req, res=express.response)=>{
+    // toma el token actual y revalida el token por x horas mas.
+    const uid = req.uid;
+    const name = req.name;
+
+    const token = await generarJWT(uid, name);
+
     res.json({
-        ok: true,
-        msg: 'revalidar token'
+        ok: true, 
+        token
     })
 }
 
