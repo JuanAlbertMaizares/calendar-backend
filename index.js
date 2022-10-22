@@ -1,13 +1,15 @@
 const express = require('express');
 const { dbConnection } = require('./database/config');
 require('dotenv').config();
+const cors = require('cors');
 // process.env.NAME_VAR
 
 // crear app server express
 const app = express();
 //DB
 dbConnection();
-
+// CORS
+app.use(cors());
 app.use(express.static('public'));
 // note: Leer y obtener/parsear lo que venga en formato json.
 app.use(express.json());
