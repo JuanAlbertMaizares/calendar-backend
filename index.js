@@ -16,6 +16,10 @@ app.use(express.json());
 //note: RUTAS
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/events', require('./routes/events'));
+// para rutas no contempladas.
+app.get('*', ( req, res ) => {
+    res.sendFile( __dirname + '/public/index.html' );
+})
 
 // escuchar solicitudes
 app.listen(process.env.PORT, ()=>{
