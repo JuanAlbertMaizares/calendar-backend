@@ -1,5 +1,5 @@
-## Back-end en NODEJS, MongoDB (Mongo Atlas)
-### Back-end para el front-end CalendarAPP en REACTJS.
+## Back-end en NODEJS, ExpressJS, MongoDB (Mongo Atlas).
+## Front-end CalendarAPP en REACTJS.
 ----------
 
 ### Para cargar las dependencias ejecutar
@@ -25,11 +25,19 @@
 
 #### Si deseas probar el codigo en local, usted debe fijar sus varaibles de entorno en heroku usando las siguientes claves:
 
+#### El puerto donde escucha
 `PORT=`
-
+#### La cadena de conexion a mongo atlas.
 `DB_CNN=` 
-
+#### La cadena secreta para usar Json web token.
 `SECRET_JWT_SEED=`
+
+#### Para el back-end se usaron:
+1. "jsonwebtoken": "^8.5.1",
+2. "mongoose": "^6.6.5",
+3. "bcryptjs": "^2.4.3",
+4. ...MUCHAS MAS.
+
 
 ----------
 
