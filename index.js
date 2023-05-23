@@ -9,12 +9,15 @@ const app = express();
 //DB
 dbConnection();
 // CORS
-app.use(cors());
+app.use(cors()); 
 app.use(express.static('public'));
 // note: Leer y obtener/parsear lo que venga en formato json.
 app.use(express.json());
-//note: RUTAS
+
+
+// ruta para autenticacion
 app.use('/api/auth', require('./routes/auth'));
+// ruta para CRUD de eventos
 app.use('/api/events', require('./routes/events'));
 // para rutas no contempladas.
 app.get('*', ( req, res ) => {

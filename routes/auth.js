@@ -9,7 +9,7 @@ const { crearUsuario, revalidarToken, loginUsuario } = require('../controllers/a
 const { validarCampos } = require('../middlewares/validar-campos');
 const { validarJWT } = require('../middlewares/validar-jwt');
 const router = Router();
-// mtd: POST . save a user.
+// mtd: POST . nuevo usuario.
 router.post(
     '/new', 
     [   // middlewares para validacion
@@ -19,12 +19,12 @@ router.post(
         validarCampos
     ],
     crearUsuario);
-// mtd: POST . save a user.
+// mtd: POST . revalidad token.
 router.get(
     '/renew', 
     validarJWT,
     revalidarToken);
-// mtd: POST . save a user.
+// mtd: POST . login comun.
 router.post(
     '/', 
     [    

@@ -2,7 +2,7 @@ const { response } = require('express');
 const jwt = require('jsonwebtoken');
 
 
-
+// este middleware se encarga de validar el token enviado por el cliente
 const validarJWT = ( req, res = response, next ) => {
     // obtenemos el token enviado por el cliente
     const token = req.header('x-token');

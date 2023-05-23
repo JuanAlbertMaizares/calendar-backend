@@ -1,3 +1,5 @@
+// este es un index version local, pq este es el usado sin tener el index deñ front-end.
+
 const express = require('express');
 const { dbConnection } = require('./database/config');
 require('dotenv').config();
