@@ -18,6 +18,7 @@ const validarJWT = ( req, res = response, next ) => {
             token,
             process.env.SECRET_JWT_SEED
         );
+        // agregamos al request los datos del usuario porque lo vamos a necesitar en el controlador
         req.uid = uid;
         req.name = name;
     } catch (error) {

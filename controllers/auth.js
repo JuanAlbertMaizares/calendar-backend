@@ -75,7 +75,7 @@ const loginUsuario = async(req, res=express.response)=>{
         });        
     }
 }
-// mtd: Controller encargado del CREATE Token
+// mtd: Controller encargado de revalidar token.
 const revalidarToken = async(req, res=express.response)=>{
     // toma el token actual y revalida el token por x horas mas.
     const uid = req.uid;
